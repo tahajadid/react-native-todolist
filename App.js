@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from './Task';
+import MainContainer from './navigation/MainContainer';
 
 export default function App() {
   const [task, setTask] = useState();
@@ -19,6 +20,7 @@ export default function App() {
   }
 
   return (
+    
     <View style={styles.container}>
       {/* Added this scroll view to enable scrolling when list gets longer than the page */}
       <ScrollView
@@ -27,10 +29,10 @@ export default function App() {
         }}
         keyboardShouldPersistTaps='handled'
       >
-
       {/* Today's Tasks */}
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Today's tasks</Text>
+        <MainContainer/>
         <View style={styles.items}>
           {/* This is where the tasks will go! */}
           {
